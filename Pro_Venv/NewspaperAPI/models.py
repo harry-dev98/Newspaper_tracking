@@ -47,6 +47,5 @@ class Intake(models.Model):
 		qty_return 	= models.IntegerField(default=0)
 		total 		= models.IntegerField(default=0)
 def save(self, *args, **kwargs):
-            super(Intake, self).save(*args, **kwargs)
-            self.total = self.newspaper.wh_price * self.qty
-            self.save()
+            self.total = self.newspaper.wh_price * self.qt
+	    super(Intake, self).save(*args, **kwargs)
